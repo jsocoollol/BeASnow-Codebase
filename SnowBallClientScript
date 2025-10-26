@@ -1,0 +1,70 @@
+-- initializations
+local tool = script.Parent
+local animsFolder = script:WaitForChild("Animations")
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character or plr.CharacterAdded:Wait()
+local hum = char:WaitForChild("Humanoid")
+
+local db = 0
+-- holds animation ids from the animation folder
+local animsTable = {
+	["Equip"] = hum:LoadAnimation(animsFolder.Equip),
+	["Idle"] = hum:LoadAnimation(animsFolder.Idle),
+	["Throw"] = hum:LoadAnimation(animsFolder.Throw)
+}
+-- makes the throw animation play
+tool.Activated:Connect(function()
+	if db == 0 then
+		db = 1
+		
+		animsTable.Throw:Play()
+		
+		task.wait(0.3)
+		
+		animsTable.Equip:Stop()
+		animsTable.Idle:Stop()
+		animsTable.Throw:Stop()
+		
+		task.wait(1)
+		
+		animsTable.Equip:Play()
+		
+		animsTable.Equip.Stopped:Connect(function()
+			if tool.Enabled then
+			animsTable.Idle:Play()
+			end
+		end)
+		
+		db = 0
+		
+	end
+end)
+
+-- plays the tool equipped animation
+tool.Equipped:Connect(function()
+	animsTable.Equip:Play()
+	tool.Enabled = true
+	animsTable.Equip.Stopped:Connect(function()
+		animsTable.Idle:Play()
+	end)
+end)
+-- cancels all animations when unequipped
+tool.Unequipped:Connect(function()
+	tool.Enabled = false
+	animsTable.Equip:Stop()
+	animsTable.Idle:Stop()
+	
+	if animsTable.Idle.IsPlaying then
+		animsTable.Idle:Stop()
+	end
+	while tool.Unequipped do
+		task.wait(0.01)
+		repeat task.wait() until animsTable.Idle.IsPlaying
+		print("hello")
+		if animsTable.Idle.IsPlaying and not tool.Enabled then
+			 animsTable.Idle:Stop() -- this is a little bugged and the only fix i know of for now
+		end
+			 break
+	end
+end)
