@@ -52,3 +52,4 @@ This repository documents the code and structure for Be A Snow and contains the 
 
 ## Contact
 Owner: jsocoollol (Jillian)
+Email: jill.salatino@gmail.com
