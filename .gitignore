@@ -1,0 +1,25 @@
+# Roblox place and model files
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx
+
+# Local and editor folders
+.vscode/
+.idea/
+
+# macOS & Windows
+.DS_Store
+Thumbs.db
+
+# Temporary and log files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Node and dependency folders (if you use tooling)
+node_modules/
+
+# Misc
+.env
