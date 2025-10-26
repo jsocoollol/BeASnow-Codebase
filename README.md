@@ -1,8 +1,6 @@
 # BeASnow — Codebase & Documentation
 
-Be AS now is a ROBLOX game I'm building. This repository contains documentation and the Luau scripts used for the game's menus and UI systems. I started the project in August and have been iterating on it since then.
-
-Enjoy!
+Be A Snow is a ROBLOX game I'm building. This repository contains documentation and the Luau scripts used for the game's menus and UI systems. I started the project in August and have been iterating on it since then.
 
 ## Table of contents
 - About
