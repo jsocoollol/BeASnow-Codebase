@@ -11,7 +11,7 @@ Enjoy!
 - Getting started (Roblox Studio)
 - How to run / test
 - Contributing
-- License
+- Credits
 - Contact
 
 ## About
@@ -44,6 +44,13 @@ This repository documents the code and structure for Be A Snow and contains the 
 - Keep commits small and focused (one feature or fix per commit).
 - Use descriptive commit messages: what changed and why.
 - Prefer feature branches for larger changes and open a pull request for review.
+
+## Credits
+- Video link to dialouge system: https://www.youtube.com/watch?v=hPEE5ol6xc4
+- Model link to dialouge system: https://create.roblox.com/store/asset/80608769509945/NPC-Dialogue-System
+
+- Github link to inventory core GUI replacement: https://github.com/RyanLua/Satchel
+- Model link to inventory core GUI replacement: https://create.roblox.com/store/asset/13947506401/Satchel-Modern-backpack-system?viewFromStudio=true&keyword=&searchId=606ad2e0-eb23-447e-9c3e-b367bb297258
 
 ## Contact
 Owner: jsocoollol (Jillian)
